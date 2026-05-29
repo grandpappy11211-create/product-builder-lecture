@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 번호 추첨기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>로또 번호 추첨기</h1>
+            <p>행운의 6개 번호를 확인하세요!</p>
+        </header>
+
+        <main>
+            <div id="ball-container" class="ball-container">
+                <!-- 로또 공이 여기에 생성됩니다 -->
+                <div class="placeholder-text">행운을 빕니다!</div>
+            </div>
+
+            <div class="controls">
+                <button id="draw-btn" class="btn btn-primary">추첨하기</button>
+                <button id="reset-btn" class="btn btn-secondary">초기화</button>
+            </div>
+        </main>
+
+        <section class="history-section">
+            <h2>최근 추첨 이력</h2>
+            <ul id="history-list">
+                <!-- 이전 기록들이 여기에 추가됩니다 -->
+            </ul>
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
