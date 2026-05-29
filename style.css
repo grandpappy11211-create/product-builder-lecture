@@ -8,6 +8,23 @@
     --card-bg: #ffffff;
     --text-primary: #333333;
     --text-secondary: #666666;
+    --header-color: #2c3e50;
+    --btn-secondary-bg: #ecf0f1;
+    --btn-secondary-text: #7f8c8d;
+    --border-color: #eeeeee;
+    --item-border: #f9f9f9;
+}
+
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --header-color: #ffffff;
+    --btn-secondary-bg: #3d3d3d;
+    --btn-secondary-text: #b0b0b0;
+    --border-color: #444444;
+    --item-border: #3d3d3d;
 }
 
 * {
@@ -25,6 +42,7 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -35,17 +53,45 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: background-color 0.3s;
+}
+
+header {
+    position: relative;
 }
 
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: #2c3e50;
+    color: var(--header-color);
 }
 
 header p {
     color: var(--text-secondary);
     margin-bottom: 30px;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    color: var(--text-primary);
+}
+
+.theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .ball-container {
@@ -59,8 +105,9 @@ header p {
 
 .placeholder-text {
     font-size: 1.2rem;
-    color: #ccc;
+    color: var(--text-secondary);
     align-self: center;
+    opacity: 0.5;
 }
 
 .ball {
@@ -121,16 +168,16 @@ header p {
 }
 
 .btn-secondary {
-    background-color: #ecf0f1;
-    color: #7f8c8d;
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
 }
 
 .btn-secondary:hover {
-    background-color: #dfe6e9;
+    background-color: var(--border-color);
 }
 
 .history-section {
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--border-color);
     padding-top: 30px;
     text-align: left;
 }
@@ -150,7 +197,7 @@ header p {
     align-items: center;
     gap: 10px;
     padding: 10px;
-    border-bottom: 1px solid #f9f9f9;
+    border-bottom: 1px solid var(--item-border);
     animation: fadeIn 0.5s ease;
 }
 
